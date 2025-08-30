@@ -48,11 +48,20 @@ It provides a **reproducible pipeline**, **standardized logging format**, and an
 ```bash
 git clone https://github.com/youla-yang/EnergyLLM-Bench.git
 cd EnergyLLM-Bench
+## Environment Setup
 
-**So ready to "change the world one run at a time"? Let's start with a very quick set up.**
-conda create -n energyllm python=3.12 -y
+We recommend using **conda** to ensure reproducibility. 
+The benchmark has been tested on:
+
+- Ubuntu 22.04 LTS
+- Python 3.10.13
+- PyTorch 2.1.0 (CUDA 12.2, cuDNN 8.9)
+- HuggingFace Transformers v4.36.2
+
+### 1. Create and activate the environment
+```bash
+conda env create -f environment.yml
 conda activate energyllm
-pip install -r requirements.txt
 
 python test_llm.py
 **this will Load the specified LLM
